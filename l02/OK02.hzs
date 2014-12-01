@@ -1,0 +1,41 @@
+<!DOCTYPE CrossStudio_for_ARM_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints/>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow addressText="" bufferWidth="-1" bufferHeight="-1" addressSpace="" />
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="OK02" name="unnamed" />
+  <ProjectSessionItem path="OK02;OK02" name="unnamed" />
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <TargetWindow programAction="" uploadFileType="" programLoadAddress="" programSize="" uploadFileName="" uploadMemoryInterface="" programFileName="" uploadStartAddress="" programFileType="" uploadSize="" programMemoryInterface="" />
+ <TraceWindow>
+  <Trace enabled="Yes" />
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never" />
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never" />
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never" />
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never" />
+ </Watch4>
+ <Files>
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="31" debugPath="/home/kyle/src/rpi_osc/l02/source/main.s" y="49" path="/home/kyle/src/rpi_osc/l02/source/main.s" left="0" selected="1" name="unnamed" top="44" />
+ </Files>
+ <ARMCrossStudioWindow activeProject="OK02" autoConnectTarget="" debugSearchFileMap="" fileDialogInitialDirectory="/home/kyle/src/rpi_osc/l02/source" fileDialogDefaultFilter="*.asm;*.s;*.inc;*.arm" autoConnectCapabilities="0" debugSearchPath="" buildConfiguration="Makefile" />
+</session>
