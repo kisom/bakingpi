@@ -17,11 +17,13 @@ main:
    */
   mov   sp, #0x8000
 
+  /* Set up ACT as an output pin. */
   mov   r0, #16
   mov   r1, #1
   bl    SetGPIOFunction
 
 loop$:
+  /* Turn on ACT. */
   mov   r0, #16
   mov   r1, #0
   bl    SetGPIO
@@ -29,11 +31,12 @@ loop$:
   ldr   r0, =100000
   bl    Wait
 
+  /* Turn off ACT. */
   mov   r0, #16
   mov   r1, #1
   bl    SetGPIO
 
-  ldr   r0, =200000
+  ldr   r0, =300000
   bl    Wait
 
   b     loop$
