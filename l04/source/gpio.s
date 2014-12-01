@@ -49,6 +49,7 @@ SetGPIO:
   cmp   r0, #53
   movhi pc, lr
 
+  push  {lr}
   mov   r2, r0
   bl    GPIOAddress
   lsr   r3, r2, #5
