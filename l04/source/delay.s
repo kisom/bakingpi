@@ -1,60 +1,46 @@
 /*
- Table 1.1 GPIO Controller Registers 
-Address	Size	Name	      Description		   Read or Write
-20003000	4	Control / Status  Register used to control and clear timer channel comparator matches.	RW
-20003004	8	Counter	   A counter that increments at 1MHz.	R
-2000300C	4	Compare 0	 0th Comparison register.	RW
-20003010	4	Compare 1	 1st Comparison register.	RW
-20003014	4	Compare 2	 2nd Comparison register.	RW
-20003018	4	Compare 3	 3rd Comparison register.	RW
-
- * The RPi has no RTC, so the timer is the only way to keep time.
+ * Timer management code.
  *
- * The counter is 64-bit, but registers are 32-bit, so two registers
- * must be used. The ldrd (load register double) instruction will load
- * a pair of registers: ldrd regLow, regHi, [src, #val].
+ * This file contains code for interacting with the GPIO timer. The
+ * primary function provided in this file is Wait, which takes a delay
+ * in microseconds, stored in r0, and delays that long.
  */
 
 /*
- * previous implementation of Wait
+ * TimerAddress returns the address of the timer.
  */
-.globl PrevWait
-PrevWait:
-  push {lr}
-  mov r2,#0x3F0000
-  wait1$:
-  sub r2,#1
-  cmp r2,#0
-  bne wait1$
-  pop {pc}
-
-
 .globl TimerAddress
 TimerAddress:
-  ldr r0, =0x20003000
-  mov pc, lr
+  push  {lr}
+  ldr   r0, =0x20003000
+  pop   {pc}
 
-.globl getTimeStamp
-getTimeStamp:
-  push {lr}
-  bl   TimerAddress
-  ldrd r0, r1, [r0, #4]
-  pop {pc}
+/*
+ * Timestamp returns the current timer as a 64-bit value in r0 (low)
+ * and r1 (high).
+ */
+.globl Timestamp
+Timestamp:
+  push  {lr}
+  bl    TimerAddress
+  ldrd  r0, r1, [r0,#4]
+  pop   {pc}
 
+/*
+ * Wait takes a 32-bit delay in microseconds (stored in r0), and waits
+ * for that long before returning.
+ */
 .globl Wait
 Wait:
-  delay .req  r2
-  mov   delay,  r0
+  mov   r2, r0
   push  {lr}
-  bl    getTimeStamp
-  start .req  r3
-  mov   start, r0
+  bl    Timestamp
+  mov   r3, r0
 
- waitLoop$:
-  bl    getTimeStamp
-  sub   r1,  r0, start
-  cmp   r1,  delay
-  bls   waitLoop$
-  .unreq delay
-  .unreq start
+  waitLoop$:
+    bl  Timestamp
+    sub r1, r0, r3
+    cmp r1, r2
+    bls waitLoop$
+  
   pop   {pc}
