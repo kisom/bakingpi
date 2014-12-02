@@ -5,11 +5,11 @@
 #	A makefile script for generation of raspberry pi kernel images.
 ###############################################################################
 
-TCPATH = /home/kyle/arm-2008q3/bin
+TCPATH = /home/kyle/arm-2008q3/bin/
 
 # The toolchain to use. arm-none-eabi works, but there does exist 
 # arm-bcm2708-linux-gnueabi.
-ARMGNU ?= $(TCPATH)/arm-none-eabi
+ARMGNU ?= $(TCPATH)arm-none-eabi
 
 # The intermediate directory for compiled object files.
 BUILD = build/
