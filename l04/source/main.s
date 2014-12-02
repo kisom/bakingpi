@@ -3,40 +3,44 @@
  */
 
 .section .init
-.globl   _start
+.globl _start
 _start:
 
-b   main
+	b   main
 
-.section    .text
-.globl      main
+.section .text
+.globl main
 main:
 
-  /* Set up the stack to point to the memory after the initialisation
-   * and text areas.
-   */
-  mov   sp, #0x8000
+	/* 
+	 * Set up the stack to point to the memory after the
+	 * initialisation and text areas.
+	 */
+	mov	sp,	#0x8000
 
-  /* Set up ACT as an output pin. */
-  mov   r0, #16
-  mov   r1, #1
-  bl    SetGPIOFunction
+	/* Set up ACT as an output pin. */
+	mov	r0,	#16
+	mov	r1,	#1
+	bl	SetGPIOFunction
 
 loop$:
-  /* Turn on ACT. */
-  mov   r0, #16
-  mov   r1, #0
-  bl    SetGPIO
+	/* Turn on ACT. */
+	mov	r0,	#16
+	mov	r1,	#0
+	bl	SetGPIO
 
-  ldr   r0, =100000
-  bl    Wait
+	/* Wait for 100ms. */
+	ldr	r0,	=100000
+	bl	Wait
 
-  /* Turn off ACT. */
-  mov   r0, #16
-  mov   r1, #1
-  bl    SetGPIO
+	/* Turn off ACT. */
+	mov	r0,	#16
+	mov	r1,	#1
+	bl	SetGPIO
 
-  ldr   r0, =300000
-  bl    Wait
+	/* Wait for 300ms. */
+	ldr	r0,	=300000
+	bl	Wait
 
-  b     loop$
+	/* Rinse and repeat. */
+	b	loop$
