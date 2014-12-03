@@ -1,0 +1,26 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="screen01" target="8" version="2">
+  <project Name="screen01">
+    <configuration
+      Name="Common"
+      arm_architecture="v6"
+      arm_core_type="ARM1176JZF-S"
+      arm_fpu_type="VFP"
+      arm_simulator_memory_simulation_filename="$(TargetsDir)/Raspberry_Pi/Raspberry_PiSimulatorMemory.dll"
+      arm_simulator_memory_simulation_parameter="BCM2835;0x1000000"
+      arm_target_debug_interface_type="ARM11"
+      arm_target_restrict_memory_accesses="Yes"
+      external_build_command="make"
+      external_build_file_name="kernel.img"
+      external_clean_command="make clean"
+      linker_memory_map_file="$(TargetsDir)/Raspberry_Pi/Raspberry_Pi_MemoryMap.xml" project_directory=""
+      project_type="Externally Built Executable"
+      target_reset_script="Reset()"
+      target_script_file="$(TargetsDir)/Raspberry_Pi/Raspberry_Pi_Target.js" />
+    <file file_name="source/gpio.s" />
+    <file file_name="source/timer.s" />
+    <file file_name="source/main.s" />
+    <file file_name="source/mailbox.s" />
+    <file file_name="source/framebuffer.s" />
+  </project>
+</solution>
