@@ -1,5 +1,5 @@
 /*
- * OK04: a basic blinker using the GPIO timer for delays.
+ * screen01: a basic framebuffer demo.
  */
 
 .section .init

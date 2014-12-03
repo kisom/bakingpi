@@ -1,5 +1,5 @@
 /*
- * OK04: a basic blinker using the GPIO timer for delays.
+ * OK05: a patterned blinker using the GPIO timer for delays.
  */
 
 .section .init

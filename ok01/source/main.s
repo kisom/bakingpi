@@ -1,4 +1,8 @@
 /*
+ * OK01: we get signal
+ */
+
+/*
  * Establish the entry point.
  */
 .section .init
