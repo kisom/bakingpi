@@ -36,9 +36,9 @@
   <Watches active="0" update="Never" />
  </Watch4>
  <Files>
-  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="4" debugPath="/home/kyle/src/rpi_osc/l04/source/delay.s" y="21" path="/home/kyle/src/rpi_osc/l04/source/delay.s" left="0" selected="1" name="unnamed" top="6" />
-  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="/home/kyle/src/rpi_osc/l04/source/gpio.s" y="103" path="/home/kyle/src/rpi_osc/l04/source/gpio.s" left="0" selected="0" name="unnamed" top="76" />
-  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="6" debugPath="/home/kyle/src/rpi_osc/l04/source/main.s" y="50" path="/home/kyle/src/rpi_osc/l04/source/main.s" left="0" selected="0" name="unnamed" top="20" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="11" debugPath="/home/kyle/src/rpi_osc/l04/source/delay.s" y="23" path="/home/kyle/src/rpi_osc/l04/source/delay.s" left="0" selected="1" name="unnamed" top="33" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="/home/kyle/src/rpi_osc/l04/source/gpio.s" y="67" path="/home/kyle/src/rpi_osc/l04/source/gpio.s" left="0" selected="0" name="unnamed" top="67" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="/home/kyle/src/rpi_osc/l04/source/main.s" y="46" path="/home/kyle/src/rpi_osc/l04/source/main.s" left="0" selected="0" name="unnamed" top="20" />
  </Files>
  <ARMCrossStudioWindow activeProject="OK04" autoConnectTarget="" debugSearchFileMap="" fileDialogInitialDirectory="/home/kyle/src/rpi_osc/l04/source" fileDialogDefaultFilter="*.asm;*.s;*.inc;*.arm" autoConnectCapabilities="0" debugSearchPath="" buildConfiguration="Common" />
 </session>
